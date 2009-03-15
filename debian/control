@@ -2,10 +2,10 @@ Source: xkbcomp
 Section: gui
 Priority: optional
 Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
-Build-Depends: debhelper (>= 4.0.0), pkg-config, libx11-dev (>= 2:1.0.0), libxkbfile-dev (>= 1:1.0.1), quilt, bison, automake, libtool
-XCS-Cross-Host-Build-Depends: debhelper (>= 4.0.0), pkg-config, quilt, bison, automake, libtool
+Build-Depends: debhelper (>= 7), autoconf, automake, libtool, xorg-util-macros, pkg-config, quilt, bison, libx11-dev (>= 2:1.0.0), libxkbfile-dev (>= 1:1.0.1)
+XCS-Cross-Host-Build-Depends: debhelper (>= 7), autoconf, automake, libtool, xorg-util-macros, pkg-config, quilt, bison
 XCS-Cross-Build-Depends: libx11-dev (>= 2:1.0.0), libxkbfile-dev (>= 1:1.0.1)
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 
 Package: xkbcomp
 Architecture: any

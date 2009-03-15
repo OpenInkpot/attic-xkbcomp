@@ -1,3 +1,10 @@
+xkbcomp (1.0.5-1) asimov; urgency=low
+
+  * Snapshot from upstream git.
+  * First build for IPlinux.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Sun, 15 Mar 2009 16:43:28 +0600
+
 xkbcomp (1.0.5-0.oi1) asimov; urgency=low
 
   * First build for OpenInkpot

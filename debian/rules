@@ -56,7 +56,6 @@ $(STAMP_DIR)/build: $(STAMP_DIR)/genscripts $(STAMP_DIR)/patch
 clean: xsfclean
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp
 
 	rm -f config.cache config.log config.status
 	rm -f */config.cache */config.log */config.status
@@ -69,19 +68,16 @@ clean: xsfclean
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs
 
 	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
 
-# Build architecture-dependent files here.
 binary-arch: build install
 	dh_testdir
 	dh_testroot
 
-#	dh_installdocs
 	dh_install --sourcedir=debian/tmp --list-missing
-#	dh_installchangelogs
 	dh_link
 	dh_strip
 	dh_compress
@@ -93,9 +89,7 @@ binary-arch: build install
 	dh_md5sums
 	dh_builddeb
 
-# Build architecture-independent files here.
 binary-indep: build install
-# Nothing to do
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install
